@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.2/css/bootstrap.min.css}" />
+</head>
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-2">
+            <p><a class="btn btn-outline-success" href="/animals/index">
+                <i class="bi bi-arrow-left-square-fill"></i> Back</a>
+            </p>
+        </div>
+        <div class="col-6">
+            <h2>Add new Animal</h2>
+            <form action="#" th:action="@{/animals/addAnimal}" th:object="${animal}" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" th:field="*{name}" id="name" placeholder="Name"
+                    >
+                    <label for="name">Type</label>
+                    <input class="form-control" type="text" th:field="*{type}" id="type" placeholder="Type"
+                    >
+                    <label for="name">CutenessLvl</label>
+                    <input class="form-control" type="text" th:field="*{cutenessLvl}" id="cutenessLvl" placeholder="CutenessLvl" min="1"
+                    >
+
+                    <button type="submit" class="btn btn-outline-success" id="submit">
+                        <i class="bi bi-plus-square-fill"></i> Add Animal
+                    </button>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.min.js}"></script>
+</body>
+</html>
